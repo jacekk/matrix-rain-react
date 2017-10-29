@@ -1,11 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import App from './App';
-
+import Rain from './components/Rain';
 import './index.css';
 
 ReactDOM.render(
-    <App />,
+    <Rain />,
     document.getElementById('page-wrapper') as HTMLElement
 );
