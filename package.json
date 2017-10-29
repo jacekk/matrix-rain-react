@@ -3,15 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "node-sass-chokidar": "^0.0.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts-ts": "2.8.0"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
+    "build-css": "node-sass-chokidar src/ -o src/",
     "build": "react-scripts-ts build",
+    "eject": "react-scripts-ts eject",
+    "start": "react-scripts-ts start",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
   },
   "devDependencies": {
     "@types/jest": "^21.1.5",

@@ -1,0 +1,38 @@
+html, body
+    margin: 0
+    padding: 0
+    height: 100%
+    width: 100%
+
+body
+    font-size: 17px
+    text-align: center
+    background: #000
+    color: #000
+    overflow: hidden
+    font-family: 'Hiragino Kaku Gothic Pro', Osaka, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif
+
+.page-wrapper
+    display: block
+    position: relative
+    height: auto !important
+    min-height: 100%
+    width: 100%
+    text-align: center
+
+.column
+    display: block
+    float: left
+    width: 14px
+    height: 100%
+
+.row
+    display: block
+    height: 18px
+    width: 100%
+    &.rotate
+        transform: rotateZ(180deg) translateY(-4px)
+    &.flip-hor
+        transform: scaleX(-1)
+    &.flip-ver
+        transform: scaleY(-1) translateY(-4px)
