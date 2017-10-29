@@ -1,7 +1,20 @@
-// [0...10] in CoffeeScript
+import { TRANSFORMATIONS } from './constants';
+
+export const limitForRange =
+    (value: number, min: number = 0, max: number = Infinity) =>
+        Math.max(
+            min,
+            Math.min(max, value)
+        );
+
+// [2...10] in CoffeeScript :P
 export const range =
-    (len: number): number[] =>
-        Array.from(Array(len).keys());
+    (stop: number, start: number = 0): number[] =>
+        Array.from(Array(stop).keys()).filter((item, index) => start <= index);
+
+export const formatColor =
+    (lightness: number, saturation: number = 100) =>
+        `hsl(120, ${saturation}%, ${lightness}%)`;
 
 // number <0, 9> or char with key codes from <65382, 65437>
 export const generateRandomChar = (): string => {
@@ -18,4 +31,10 @@ export const generateRandomChar = (): string => {
     }
 
     return String.fromCharCode(rand);
+};
+
+export const getRandomTransformation = (): string => {
+    const randIndex = Math.floor(Math.random() * TRANSFORMATIONS.length);
+
+    return TRANSFORMATIONS[randIndex];
 };

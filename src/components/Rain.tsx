@@ -1,12 +1,9 @@
 import * as React from 'react';
 
+import { COL_SIZE, ROW_SIZE } from '../constants';
 import { range } from '../utils';
 
 import Column from './Column';
-
-const COL_SIZE: number = 14;
-const ROW_SIZE: number = 18;
-const STEP_INTV: number = 5e3;
 
 class Rain extends React.Component {
     state = {
@@ -16,23 +13,18 @@ class Rain extends React.Component {
     };
 
     componentDidMount() {
-        this.setEnvParams();
-        this.initInterval();
+        this.calculateAmounts();
     }
 
-    setEnvParams() {
-        const rowsAmount = Math.floor(window.innerHeight / ROW_SIZE);
-        const colsAmount = Math.floor(window.innerWidth / COL_SIZE);
+    calculateAmounts() {
+        let rowsAmount = Math.floor(window.innerHeight / ROW_SIZE);
+        let colsAmount = Math.floor(window.innerWidth / COL_SIZE);
+
+        // Limited for now, 'cause it lags as hell :(
+        rowsAmount = 10;
+        colsAmount = 10;
 
         this.setState({ colsAmount, rowsAmount });
-    }
-
-    initInterval() {
-        const intvCallback = () => {
-            // do step
-        };
-
-        setInterval(intvCallback, STEP_INTV);
     }
 
     renderColumns() {
