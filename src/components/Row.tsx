@@ -7,20 +7,18 @@ export interface RowProps {
     transformation: string;
 }
 
-class Row extends React.Component<RowProps, {}> {
-    render() {
-        const { char, transformation, color } = this.props;
-        const classes = ['row', transformation].join(' ').trim();
+const Row = (props: RowProps) => {
+    const { char, transformation, color } = props;
+    const classes = ['row', transformation].join(' ').trim();
 
-        return (
-            <div
-                className={classes}
-                style={{ color }}
-            >
-                {char}
-            </div>
-        );
-    }
-}
+    return (
+        <div
+            className={classes}
+            style={{ color }}
+        >
+            {char}
+        </div>
+    );
+};
 
 export default Row;

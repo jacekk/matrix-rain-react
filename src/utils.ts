@@ -1,4 +1,4 @@
-import { TRANSFORMATIONS } from './constants';
+import { TRANSFORMATIONS, COLOR_SMOOTHNESS } from './constants';
 
 export const limitForRange =
     (value: number, min: number = 0, max: number = Infinity) =>
@@ -33,8 +33,18 @@ export const generateRandomChar = (): string => {
     return String.fromCharCode(rand);
 };
 
+export const getRangeRandom =
+    (start: number, end: number): number =>
+        start - Math.ceil(Math.random() * end);
+
 export const getRandomTransformation = (): string => {
     const randIndex = Math.floor(Math.random() * TRANSFORMATIONS.length);
 
     return TRANSFORMATIONS[randIndex];
 };
+
+export const getRandomBegin = (rowsAmount: number) =>
+    Math.ceil(Math.random() * rowsAmount * 4) * -1;
+
+export const getRandomLength = (rowsAmount: number) =>
+    (COLOR_SMOOTHNESS * 2) + Math.floor(Math.random() * rowsAmount);
