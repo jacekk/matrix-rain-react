@@ -2,6 +2,7 @@
   "name": "matrix-rain-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://jacek-k.net/matrix-rain-react",
   "dependencies": {
     "node-sass-chokidar": "^0.0.3",
     "react": "^16.0.0",

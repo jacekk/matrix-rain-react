@@ -1,6 +1,6 @@
 {
   "short_name": "Martix Rain",
-  "name": "Martix Rain in React",
+  "name": "Martix Rain in TypeScript with React",
   "icons": [
     {
       "src": "favicon.ico",
